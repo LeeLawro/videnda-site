@@ -14,27 +14,59 @@
   :root{
     --navy:#1F3B5B; --navy2:#152B44; --blue:#2E75B6; --ink:#0e1a2b;
     --mist:#c7d6ea; --line:rgba(255,255,255,.14);
+    --crit:#d0574f; --high:#dc9038; --med:#d8b73c; --low:#5cae74;
   }
   *{box-sizing:border-box}
   html,body{height:100%}
   body{
     margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     color:#eaf1fb; background:radial-gradient(1200px 700px at 70% -10%, #29527e 0%, var(--navy) 45%, var(--navy2) 100%);
-    display:flex; align-items:center; justify-content:center; min-height:100vh; padding:32px;
+    display:flex; align-items:center; justify-content:center; min-height:100vh; padding:40px 32px;
   }
-  .wrap{max-width:640px; width:100%}
+  .wrap{max-width:780px; width:100%}
   .brand{display:flex; align-items:center; gap:14px; margin-bottom:34px}
   .mark{width:52px; height:52px; flex:none}
   .brand h1{font-size:26px; margin:0; letter-spacing:.02em; font-weight:700}
   .brand span{color:var(--mist); font-size:13px; display:block; font-weight:400; letter-spacing:.14em; text-transform:uppercase; margin-top:2px}
   h2{font-size:clamp(30px,6vw,46px); line-height:1.08; margin:0 0 18px; font-weight:700}
   h2 em{color:#9cc4ef; font-style:normal}
-  p.lede{font-size:18px; line-height:1.6; color:#d6e2f2; margin:0 0 14px}
-  p.latin{font-size:15px; color:var(--mist); font-style:italic; margin:0 0 34px}
+  p.lede{font-size:18px; line-height:1.6; color:#d6e2f2; margin:0 0 14px; max-width:620px}
+  p.latin{font-size:15px; color:var(--mist); font-style:italic; margin:0 0 30px}
   .row{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
   a.cta{background:#fff; color:var(--ink); text-decoration:none; font-weight:600; padding:13px 20px; border-radius:10px; font-size:15px}
   a.ghost{color:#eaf1fb; text-decoration:none; font-weight:500; padding:13px 4px; font-size:15px; border-bottom:1px solid var(--line)}
-  .foot{margin-top:48px; padding-top:20px; border-top:1px solid var(--line); color:var(--mist); font-size:13px; line-height:1.6}
+
+  /* product mockup */
+  .mock{margin:40px 0 12px; border-radius:14px; overflow:hidden; background:#fff; color:#16233a;
+    box-shadow:0 24px 60px rgba(6,16,32,.45); border:1px solid rgba(255,255,255,.08)}
+  .mock .bar{display:flex; align-items:center; gap:8px; padding:11px 14px; background:#eef3f9; border-bottom:1px solid #e0e8f2}
+  .mock .bar i{width:11px; height:11px; border-radius:50%; background:#cdd7e4; display:inline-block}
+  .mock .bar .url{margin-left:10px; font-size:12px; color:#6b7c93; background:#fff; border:1px solid #e0e8f2; border-radius:6px; padding:4px 12px}
+  .mock .body{padding:20px 22px}
+  .mock .cap{font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:#7488a2; margin:0 0 6px; font-weight:600}
+  .mock h3{margin:0 0 14px; font-size:19px; color:var(--navy)}
+  .rb{display:flex; height:14px; border-radius:8px; overflow:hidden; border:1px solid #e2e8f2; margin-bottom:8px}
+  .rb span{display:block}
+  .rlg{display:flex; flex-wrap:wrap; gap:14px; font-size:12px; color:#65758c; margin-bottom:18px}
+  .rlg .k{display:inline-flex; align-items:center; gap:6px}
+  .rlg .sw{width:11px; height:11px; border-radius:3px; display:inline-block}
+  .tiles{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:18px}
+  .tile{background:#f4f8fc; border:1px solid #e2e8f2; border-radius:12px; padding:12px 14px}
+  .tile .n{font-size:24px; font-weight:700; color:var(--navy)}
+  .tile .l{font-size:11px; color:#65758c; text-transform:uppercase; letter-spacing:.04em}
+  .fixrow{display:flex; align-items:center; gap:10px; padding:9px 0; border-top:1px solid #eef2f7; font-size:14px; color:#33445c}
+  .pill{display:inline-block; padding:2px 9px; border-radius:20px; font-size:11px; font-weight:700; color:#fff; flex:none}
+  .p-crit{background:var(--crit)} .p-high{background:var(--high)} .p-med{background:var(--med)}
+
+  /* how it works */
+  .how{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:34px 0 8px}
+  .step{background:rgba(255,255,255,.05); border:1px solid var(--line); border-radius:12px; padding:18px}
+  .step .g{width:34px; height:34px; margin-bottom:10px; color:#9cc4ef}
+  .step b{display:block; font-size:15px; margin-bottom:4px}
+  .step p{margin:0; font-size:13.5px; color:var(--mist); line-height:1.5}
+  @media(max-width:620px){ .how,.tiles{grid-template-columns:1fr} }
+
+  .foot{margin-top:44px; padding-top:20px; border-top:1px solid var(--line); color:var(--mist); font-size:13px; line-height:1.6}
   .dot{display:inline-block; width:8px; height:8px; border-radius:50%; background:#5ad07f; margin-right:8px; box-shadow:0 0 0 4px rgba(90,208,127,.18)}
 </style>
 <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c0740a36f1b14ede980220805259c9c9"}'></script><!-- End Cloudflare Web Analytics -->
@@ -64,6 +96,55 @@
     <div class="row">
       <a class="cta" href="https://app.videnda.co">Run the free diagnostic</a>
       <a class="ghost" href="mailto:hello@videnda.co">Get early access</a>
+    </div>
+
+    <!-- product mockup -->
+    <div class="mock" aria-label="Example of the Videnda asset and risk snapshot">
+      <div class="bar"><i></i><i></i><i></i><span class="url">app.videnda.co</span></div>
+      <div class="body">
+        <p class="cap">Asset &amp; risk snapshot</p>
+        <h3>8 assets found &middot; 6 with findings</h3>
+        <div class="rb">
+          <span style="width:25%;background:var(--crit)"></span>
+          <span style="width:37%;background:var(--high)"></span>
+          <span style="width:25%;background:var(--med)"></span>
+          <span style="width:13%;background:var(--low)"></span>
+        </div>
+        <div class="rlg">
+          <span class="k"><span class="sw" style="background:var(--crit)"></span>Critical 2</span>
+          <span class="k"><span class="sw" style="background:var(--high)"></span>High 3</span>
+          <span class="k"><span class="sw" style="background:var(--med)"></span>Medium 2</span>
+          <span class="k"><span class="sw" style="background:var(--low)"></span>Low 1</span>
+        </div>
+        <div class="tiles">
+          <div class="tile"><div class="n">8</div><div class="l">Assets found</div></div>
+          <div class="tile"><div class="n">3</div><div class="l">Known-exploited</div></div>
+          <div class="tile"><div class="n">2</div><div class="l">End of life</div></div>
+        </div>
+        <div class="fixrow"><span class="pill p-crit">Critical</span><span><strong>HIST-SRV-01</strong> &middot; Windows Server 2008, end of life</span></div>
+        <div class="fixrow"><span class="pill p-high">High</span><span><strong>LINE1-PLC-01</strong> &middot; Siemens PLC with a known-exploited vulnerability</span></div>
+        <div class="fixrow"><span class="pill p-med">Medium</span><span><strong>CAM-DOCK-2</strong> &middot; internet-exposed camera, likely default password</span></div>
+      </div>
+    </div>
+    <p class="latin" style="margin:10px 0 0;font-size:13px">Example output. Your file is processed in memory and not stored.</p>
+
+    <!-- how it works -->
+    <div class="how">
+      <div class="step">
+        <svg class="g" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V4"/><path d="m7.5 8.5 4.5-4.5 4.5 4.5"/><path d="M5 15v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg>
+        <b>1. Upload</b>
+        <p>A spreadsheet of your kit, or an Nmap scan. Guides and a template are built in.</p>
+      </div>
+      <div class="step">
+        <svg class="g" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+        <b>2. See every device</b>
+        <p>A clean, government-taxonomy inventory with a risk score for each asset.</p>
+      </div>
+      <div class="step">
+        <svg class="g" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        <b>3. Fix what matters</b>
+        <p>A ranked "fix these first" list, checked against public vulnerability intelligence.</p>
+      </div>
     </div>
 
     <div class="foot">
